@@ -14,3 +14,10 @@ RUN apt-key add /root/nginx_signing.key \
     && DEBIAN_FRONTEND="noninteractive" \
         apt-get install -y nginx \
     && rm -rf /var/lib/apt/lists/*
+
+COPY nginx.conf /etc/nginx/
+
+VOLUME ["/home/data"]
+
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]
