@@ -16,6 +16,7 @@ RUN apt-key add /root/nginx_signing.key \
     && rm -rf /var/lib/apt/lists/*
 
 COPY nginx.conf /etc/nginx/
+COPY home /home
 
 VOLUME ["/home/data"]
 
