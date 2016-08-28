@@ -5,6 +5,9 @@
 FROM youpin/ubuntu
 MAINTAINER Leo <jiangwenhua@yoyohr.com>
 
+VOLUME /home/data
+COPY home /home
+
 #Update nginx.list
 COPY nginx.list /etc/apt/sources.list.d/nginx.list
 COPY nginx_signing.key /root/nginx_signing.key
@@ -16,9 +19,6 @@ RUN apt-key add /root/nginx_signing.key \
     && rm -rf /var/lib/apt/lists/*
 
 COPY nginx.conf /etc/nginx/
-COPY home /home
-
-VOLUME ["/home/data"]
 
 EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]
