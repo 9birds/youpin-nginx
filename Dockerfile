@@ -5,8 +5,8 @@
 FROM youpin/ubuntu
 MAINTAINER Leo <jiangwenhua@yoyohr.com>
 
-VOLUME /home/data
 COPY home /home
+VOLUME /home/data
 
 #Update nginx.list
 COPY nginx.list /etc/apt/sources.list.d/nginx.list
