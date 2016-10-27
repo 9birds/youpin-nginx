@@ -2,7 +2,7 @@
 # Nginx Dockerfile
 # version 1.1
 #
-FROM youpin/ubuntu:gzy
+FROM youpin/ubuntu
 MAINTAINER Leo <jiangwenhua@yoyohr.com>
 
 COPY home /home
