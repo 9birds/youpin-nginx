@@ -3,7 +3,7 @@ server {
     listen 80 default;
     
     root /home/data/www;
-    index index.html index.htm index:Q!.php;
+    index index.html index.htm index.php;
 
     location / {
         root /home/data/www;
